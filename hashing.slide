@@ -1,0 +1,109 @@
+Hashing
+A Miracle of Math!
+
+Jeromy Johnson
+Network Admin, WSU CSG
+me@jero.my
+http://jero.my
+
+* What is Hashing?
+
+Hashing is the act of creating a hash using a hashing function.
+
+Well, what is a hash then?
+
+A hash is the output of a hashing function, it is a specific number of seemingly random bytes
+
+.image crispy-hash-browns-1.jpg
+
+
+* Okay, Hash functions?
+Thats the real question. What is a hash function?
+
+A hash function is a function that takes arbitrary data and produces a different set of data as an output.
+
+The function must also have the following traits:
+- The same input must always give the same output (consistency)
+- The output cannot be used to find the input (one way)
+
+There are many many different types of hash functions, including:
+- md5
+- sha
+- scrypt
+- bcrypt
+
+* An Example
+
+.play hash1.go
+
+* Okay, Cool. Whats the point?
+Hashing is very useful in a wide array of applications
+- Validation
+- Torrents
+- Passwords
+- Cryptocurrency
+- Hash Tables
+
+* Validation
+Since each specific input maps to a specific output...
+
+A specific file must always produce the same hash, called a 'checksum'
+
+If some malicious person changed the file, it would not produce the same checksum.
+
+* Torrents
+BitTorrents capitalize on a few different uses of hashing.
+- File Validation
+- Distributed Hash Tables
+
+.image network.png
+
+* Passwords
+Hashing is used to hide passwords.
+
+Instead of sending a users password across a potentially insecure connetion, hash it first! That way, listeners can't discover the real password.
+
+This does not automatically add security to the service!
+
+Protects against password reuse attacks.
+
+* Rainbow Tables
+Every possible hash for a given parameter set.
+
+Pros:
+- If user had a weak password, it is trivial to lookup their password in the table.
+- Unsalted passwords fall before you!
+Cons:
+- Take a long time to generate
+- Take up lots of disk space
+
+* Salting
+Salting is adding some extra data to the input of a hash.
+
+Obviously makes the input longer, why is this helpful?
+- More possibilities to try
+- Defeats rainbow tables
+- Makes brute forcing marginally more difficult
+
+.image salt.jpg
+
+* Cryptocurrency
+Bitcoin and other cryptocurrencies are ALL about hashing.
+
+'Miners' take transaction data and bundle it up into a struct.
+
+They then pick a value called the nonce to add to the struct and hash it. 
+If the resulting hash starts with a specific number of zeros (called the network difficulty) it is accepted by the network and the miner is paid for his time.
+
+* An Example
+
+.play coin.go
+
+* Hash Tables
+Probably the most common use of all for hashing, is hash tables.
+
+Also known as a map or dictionary, can take any hashable data as a key, and use it to store some value.
+
+This works because a hash is actually a number, and more importantly, a unique consistent number.
+
+.image hashtable.png
