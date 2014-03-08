@@ -109,21 +109,27 @@ This works because a hash is actually a number, and more importantly, a unique c
 .image hashtable.png
 
 * Okay, hashes are cool, where do I start?
-- Different Types of hash functions
-	- Crypto Hashes
-		- Skein
-		- Sha
-		- Scrypt
-	- Non-Crypto Hashes
-		- Md5 (arguably)
-		- CRC
-		- Sums
+Different Types of hash functions
+
+Crypto Hashes
+- Skein
+- Sha
+- Scrypt
+Non-Crypto Hashes
+- Md5 (arguably)
+- CRC
+- Sums
+
+Cryptographic hash functions are a subset of hash functions. They have the following attributes:
+- Hard to change input without changing output
+- Hard to find an input for a given output
+- Hard to find two inputs with the same output
 
 * Whats in a *Good* hash function?
 
-- Memory Complexity
-	- How much memory does it take to calculate?
-- Time Complexity
-	- How long does it take your CPU to calculate?
-- Collisions
-	- How probable is it that two inputs give same output?
+Memory Complexity
+- How much memory does it take to calculate?
+Time Complexity
+- How long does it take your CPU to calculate?
+Collisions
+- How probable is it that two inputs give same output?
