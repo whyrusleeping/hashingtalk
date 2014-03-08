@@ -95,7 +95,7 @@ Bitcoin and other cryptocurrencies are ALL about hashing.
 They then pick a value called the nonce to add to the struct and hash it. 
 If the resulting hash starts with a specific number of zeros (called the network difficulty) it is accepted by the network and the miner is paid for his time.
 
-* An Example
+* An Example (Dont judge my ugly code!)
 
 .play coin.go
 
@@ -107,3 +107,23 @@ Also known as a map or dictionary, can take any hashable data as a key, and use 
 This works because a hash is actually a number, and more importantly, a unique consistent number.
 
 .image hashtable.png
+
+* Okay, hashes are cool, where do I start?
+- Different Types of hash functions
+	- Crypto Hashes
+		- Skein
+		- Sha
+		- Scrypt
+	- Non-Crypto Hashes
+		- Md5 (arguably)
+		- CRC
+		- Sums
+
+* Whats in a *Good* hash function?
+
+- Memory Complexity
+	- How much memory does it take to calculate?
+- Time Complexity
+	- How long does it take your CPU to calculate?
+- Collisions
+	- How probable is it that two inputs give same output?
