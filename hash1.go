@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	mystr := "Hello World!"
+	mystr := "Corned Beef"
 	hash := md5.Sum([]byte(mystr))
 	fmt.Println(hex.EncodeToString(hash[:]))
 }
