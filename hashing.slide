@@ -32,7 +32,7 @@ There are many many different types of hash functions, including:
 - scrypt
 - bcrypt
 
-* An Example
+* An Example (Or, how to make a corned beef hash)
 
 .play hash1.go
 
